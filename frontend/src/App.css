@@ -1,0 +1,441 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f4f7f2;
+  color: #1f2937;
+}
+
+.app {
+  min-height: 100vh;
+}
+
+/* ================= HEADER ================= */
+
+.header {
+  background: #166534;
+  color: white;
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 36px;
+}
+
+.header p {
+  margin: 12px 0 0;
+  font-size: 17px;
+}
+
+/* ================= CONTAINER ================= */
+
+.container {
+  width: min(1100px, 92%);
+  margin: 40px auto;
+}
+
+/* ================= CARDS ================= */
+
+.upload-card,
+.result-card {
+  background: white;
+  border-radius: 18px;
+  padding: 30px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+  margin-bottom: 30px;
+}
+
+.upload-card h2,
+.result-card h2 {
+  color: #166534;
+}
+
+.description {
+  color: #6b7280;
+}
+
+/* ================= UPLOAD ================= */
+
+.upload-area {
+  display: block;
+  border: 2px dashed #4ade80;
+  border-radius: 16px;
+  min-height: 320px;
+  margin-top: 25px;
+  cursor: pointer;
+  overflow: hidden;
+  background: #f0fdf4;
+}
+
+.upload-area input {
+  display: none;
+}
+
+.upload-placeholder {
+  min-height: 320px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.upload-icon {
+  font-size: 60px;
+}
+
+.upload-placeholder h3 {
+  color: #166534;
+}
+
+.upload-placeholder p {
+  color: #6b7280;
+}
+
+.preview-image {
+  width: 100%;
+  height: 320px;
+  object-fit: contain;
+  background: #111827;
+}
+
+.filename {
+  color: #4b5563;
+}
+
+/* ================= BUTTON ================= */
+
+.predict-button {
+  width: 100%;
+  border: none;
+  border-radius: 12px;
+  background: #16a34a;
+  color: white;
+  padding: 15px;
+  margin-top: 20px;
+  font-size: 17px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.predict-button:hover {
+  background: #15803d;
+}
+
+.predict-button:disabled {
+  background: #9ca3af;
+  cursor: not-allowed;
+}
+
+/* ================= ERROR ================= */
+
+.error {
+  margin-top: 20px;
+  padding: 14px;
+  border-radius: 10px;
+  background: #fee2e2;
+  color: #b91c1c;
+}
+
+/* ================= MAIN RESULT ================= */
+
+.main-result {
+  text-align: center;
+  background: #f0fdf4;
+  border-radius: 15px;
+  padding: 30px;
+  margin: 20px 0;
+}
+
+.result-label {
+  color: #6b7280;
+  font-size: 16px;
+}
+
+.main-result h3 {
+  font-size: 32px;
+  color: #166534;
+  margin: 10px 0;
+}
+
+/* ================= CONFIDENCE ================= */
+
+.confidence-section {
+  max-width: 600px;
+  margin: 20px auto 0;
+}
+
+.confidence {
+  font-size: 19px;
+  margin-bottom: 10px;
+}
+
+.confidence strong {
+  color: #166534;
+}
+
+/* Confidence progress bar */
+
+.confidence-bar {
+  width: 100%;
+  height: 18px;
+  background: #dcfce7;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.confidence-fill {
+  height: 100%;
+  background: #16a34a;
+  border-radius: 20px;
+  transition: width 0.6s ease;
+}
+
+/* Confidence level */
+
+.confidence-level {
+  margin-top: 12px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+/* ================= TOP PREDICTIONS ================= */
+
+.top-predictions {
+  margin-top: 30px;
+}
+
+.top-predictions h3 {
+  color: #166534;
+}
+
+.prediction-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 16px;
+
+  margin: 8px 0;
+
+  border-radius: 10px;
+
+  background: #f9fafb;
+
+  border: 1px solid #e5e7eb;
+}
+
+.prediction-row strong {
+  color: #166534;
+}
+
+/* ================= TOP CHARACTERISTICS ================= */
+
+.top-characteristics {
+  margin-top: 35px;
+}
+
+.top-characteristics h3 {
+  color: #166534;
+  margin-bottom: 20px;
+}
+
+.characteristic-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+}
+
+.characteristic-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+
+  background: #f0fdf4;
+
+  padding: 20px;
+
+  border-radius: 14px;
+
+  border-left: 5px solid #16a34a;
+}
+
+.characteristic-item > span {
+  font-size: 30px;
+}
+
+.characteristic-item strong {
+  color: #166534;
+  font-size: 17px;
+}
+
+.characteristic-item p {
+  margin: 8px 0 0;
+  color: #4b5563;
+  line-height: 1.5;
+}
+
+/* ================= BREED INFORMATION ================= */
+
+.breed-info {
+  margin-top: 35px;
+}
+
+.breed-info h3 {
+  color: #166534;
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+}
+
+.info-grid > div {
+  background: #f9fafb;
+  padding: 18px;
+  border-radius: 12px;
+  border-left: 4px solid #16a34a;
+}
+
+.info-grid strong {
+  color: #166534;
+}
+
+.info-grid p {
+  margin-bottom: 0;
+  color: #4b5563;
+  line-height: 1.5;
+}
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 700px) {
+
+  .header h1 {
+    font-size: 28px;
+  }
+
+  .upload-card,
+  .result-card {
+    padding: 20px;
+  }
+
+  .info-grid,
+  .characteristic-list {
+    grid-template-columns: 1fr;
+  }
+
+  .main-result h3 {
+    font-size: 25px;
+  }
+}
+.confidence-explanation {
+  margin-top: 15px;
+  padding: 12px 16px;
+  background: white;
+  border-radius: 10px;
+  color: #4b5563;
+  font-size: 14px;
+  line-height: 1.5;
+}
+/* ============================= */
+/* BREED EXPLORER */
+/* ============================= */
+
+.breed-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.breed-item {
+  padding: 14px;
+  border: 1px solid #d9e6dc;
+  border-radius: 10px;
+  background: #f7fbf8;
+  color: #164b2a;
+  font-size: 16px;
+  text-align: left;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.breed-item:hover {
+  background: #e5f6e9;
+  border-color: #16a34a;
+  transform: translateY(-2px);
+}
+
+.breed-loading {
+  margin-top: 25px;
+  padding: 20px;
+  text-align: center;
+  font-size: 18px;
+  color: #166534;
+}
+
+/* ============================= */
+/* SELECTED BREED DETAILS */
+/* ============================= */
+
+.selected-breed-card {
+  margin-top: 30px;
+  padding: 25px;
+  background: #f0fff4;
+  border-radius: 16px;
+  border: 1px solid #cde8d4;
+}
+
+.selected-breed-card h3 {
+  margin-bottom: 20px;
+  color: #166534;
+  font-size: 26px;
+}
+
+.breed-details-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+}
+
+.breed-detail-item {
+  padding: 18px;
+  background: white;
+  border-left: 4px solid #16a34a;
+  border-radius: 10px;
+}
+
+.breed-detail-item strong {
+  display: block;
+  margin-bottom: 8px;
+  color: #166534;
+  font-size: 17px;
+}
+
+.breed-detail-item p {
+  margin: 0;
+  color: #374151;
+  line-height: 1.5;
+}
+
+/* ============================= */
+/* MOBILE */
+/* ============================= */
+
+@media (max-width: 700px) {
+
+  .breed-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .breed-details-grid {
+    grid-template-columns: 1fr;
+  }
+
+}
