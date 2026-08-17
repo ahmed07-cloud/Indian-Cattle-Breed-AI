@@ -465,6 +465,42 @@ BREED_DATA: Dict[str, Dict[str, str]] = {
 
 
 # ============================================================
+# ADDITIONAL BREED PROFILES
+# Source: Indian_Cattle_Buffalo_77_State_Wise_Same_Format.xlsx
+# ============================================================
+
+BREED_DATA.update({
+    "Luit (Swamp)": {"origin": "Assam; Manipur (India)", "type": "Buffalo", "purpose": "Milk + draught", "appearance": "Dark, compact", "climate": "Hot, humid", "special_features": "Swamp adapted"},
+    "Manah": {"origin": "Assam (India)", "type": "Buffalo", "purpose": "Milk + draught", "appearance": "Black, compact", "climate": "Hot, humid", "special_features": "Swamp-region adapted"},
+    "Lakhimi": {"origin": "Assam (India)", "type": "Cattle", "purpose": "Milk + draught", "appearance": "Grey/white, medium frame", "climate": "Hot, humid", "special_features": "Adapted to Assam"},
+    "Purnea": {"origin": "Bihar (India)", "type": "Cattle", "purpose": "Draught", "appearance": "White/grey, medium frame", "climate": "Hot, humid", "special_features": "Hardy"},
+    "Kosali": {"origin": "Chhattisgarh (India)", "type": "Cattle", "purpose": "Draught", "appearance": "White/grey, compact", "climate": "Hot, humid", "special_features": "Hardy"},
+    "Medini": {"origin": "Jharkhand (India)", "type": "Cattle", "purpose": "Draught + milk", "appearance": "White/grey, sturdy", "climate": "Hot, humid", "special_features": "Hardy"},
+    "Dharwadi": {"origin": "Karnataka (India)", "type": "Buffalo", "purpose": "Milk + draught", "appearance": "Black, medium horns", "climate": "Hot, humid", "special_features": "Hardy"},
+    "Malvi": {"origin": "Madhya Pradesh (India)", "type": "Cattle", "purpose": "Draught", "appearance": "White/grey, sturdy", "climate": "Hot, dry", "special_features": "Hardy"},
+    "Marathwadi": {"origin": "Maharashtra (India)", "type": "Buffalo", "purpose": "Milk + draught", "appearance": "Black, medium horns", "climate": "Hot, dry", "special_features": "Hardy"},
+    "Melghati": {"origin": "Maharashtra (India)", "type": "Buffalo", "purpose": "Milk + draught", "appearance": "Black, sturdy", "climate": "Hot, dry", "special_features": "Hardy"},
+    "Purnathadi": {"origin": "Maharashtra (India)", "type": "Buffalo", "purpose": "Milk + draught", "appearance": "Black, medium horns", "climate": "Hot, dry", "special_features": "Hardy"},
+    "Kathani": {"origin": "Maharashtra (India)", "type": "Cattle", "purpose": "Draught", "appearance": "Grey/white, sturdy", "climate": "Hot, dry", "special_features": "Hardy"},
+    "Konkan Kapila": {"origin": "Maharashtra; Goa (India)", "type": "Cattle", "purpose": "Milk + draught", "appearance": "Red/white, medium horns", "climate": "Hot, humid", "special_features": "Coastal adapted"},
+    "Masilum": {"origin": "Meghalaya (India)", "type": "Cattle", "purpose": "Milk + draught", "appearance": "Dark/black, small frame", "climate": "Hilly, humid", "special_features": "Hill adapted"},
+    "Thutho": {"origin": "Nagaland (India)", "type": "Cattle", "purpose": "Milk + draught", "appearance": "Brown/black, medium frame", "climate": "Hilly, humid", "special_features": "Hill adapted"},
+    "Kalahandi": {"origin": "Odisha (India)", "type": "Buffalo", "purpose": "Milk + draught", "appearance": "Black, sturdy", "climate": "Hot, humid", "special_features": "Hardy"},
+    "Manda": {"origin": "Odisha (India)", "type": "Buffalo", "purpose": "Milk + draught", "appearance": "Black, sturdy", "climate": "Hot, humid", "special_features": "Hardy"},
+    "Binjharpuri": {"origin": "Odisha (India)", "type": "Cattle", "purpose": "Milk + draught", "appearance": "Grey/white, medium frame", "climate": "Hot, humid", "special_features": "Dual-purpose"},
+    "Khariar": {"origin": "Odisha (India)", "type": "Cattle", "purpose": "Draught", "appearance": "Grey/white", "climate": "Hot, humid", "special_features": "Hardy"},
+    "Motu": {"origin": "Odisha; Chhattisgarh; Andhra Pradesh (India)", "type": "Cattle", "purpose": "Draught", "appearance": "Grey/white, sturdy", "climate": "Hot, humid", "special_features": "Hardy"},
+    "Mewati": {"origin": "Rajasthan; Haryana; Uttar Pradesh (India)", "type": "Cattle", "purpose": "Milk + draught", "appearance": "White/grey, dark neck", "climate": "Hot, dry", "special_features": "Dual-purpose"},
+    "Nari": {"origin": "Rajasthan; Gujarat (India)", "type": "Cattle", "purpose": "Draught", "appearance": "Grey/white, medium horns", "climate": "Hot, arid", "special_features": "Arid adapted"},
+    "Sanchori": {"origin": "Rajasthan (India)", "type": "Cattle", "purpose": "Draught", "appearance": "White/grey, medium frame", "climate": "Hot, arid", "special_features": "Arid adapted"},
+    "Toda": {"origin": "Tamil Nadu (India)", "type": "Buffalo", "purpose": "Milk", "appearance": "Grey/black, large curved horns", "climate": "Hilly, humid", "special_features": "Nilgiri adapted"},
+    "Kenkatha": {"origin": "Uttar Pradesh; Madhya Pradesh (India)", "type": "Cattle", "purpose": "Draught", "appearance": "Grey/white, compact", "climate": "Hot, dry", "special_features": "Hardy"},
+    "Kherigarh": {"origin": "Uttar Pradesh (India)", "type": "Cattle", "purpose": "Draught", "appearance": "White/grey, medium horns", "climate": "Hot, dry", "special_features": "Hardy"},
+    "Rohilkhandi": {"origin": "Uttar Pradesh (India)", "type": "Cattle", "purpose": "Draught + milk", "appearance": "White/grey, sturdy", "climate": "Hot, humid", "special_features": "Hardy"},
+})
+
+
+# ============================================================
 # NORMALIZE BREED NAME
 # ============================================================
 
