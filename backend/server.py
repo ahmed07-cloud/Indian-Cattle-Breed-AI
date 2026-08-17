@@ -363,6 +363,7 @@ async def predict(
             get_canonical_breed_name(
                 predicted_breed
             )
+            or predicted_breed
         )
 
 
