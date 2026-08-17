@@ -201,6 +201,11 @@ function App() {
 
   const predictionInfo = result?.breed_info || {};
 
+  const predictedBreed =
+    result?.breed ||
+    result?.top_3?.[0]?.breed ||
+    "Unknown Breed";
+
   const selectedInfo =
     selectedBreed?.information || {};
 
@@ -343,7 +348,7 @@ function App() {
               </div>
 
               <h3>
-                🐄 {result.breed || "Unknown Breed"}
+                🐄 {predictedBreed}
               </h3>
 
 
