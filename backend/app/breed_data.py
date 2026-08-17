@@ -497,6 +497,86 @@ BREED_DATA.update({
     "Kenkatha": {"origin": "Uttar Pradesh; Madhya Pradesh (India)", "type": "Cattle", "purpose": "Draught", "appearance": "Grey/white, compact", "climate": "Hot, dry", "special_features": "Hardy"},
     "Kherigarh": {"origin": "Uttar Pradesh (India)", "type": "Cattle", "purpose": "Draught", "appearance": "White/grey, medium horns", "climate": "Hot, dry", "special_features": "Hardy"},
     "Rohilkhandi": {"origin": "Uttar Pradesh (India)", "type": "Cattle", "purpose": "Draught + milk", "appearance": "White/grey, sturdy", "climate": "Hot, humid", "special_features": "Hardy"},
+        "Alambadi": {
+        "origin": "Tamil Nadu, India",
+        "type": "Cattle",
+        "purpose": "Draft work",
+        "appearance": "Medium-sized cattle with grey to dark grey coat",
+        "climate": "Adapted to hot and dry conditions",
+        "special_features": "Hardy breed known for strength and endurance",
+    },
+
+    "Ayrshire": {
+        "origin": "Scotland",
+        "type": "Cattle",
+        "purpose": "Milk production",
+        "appearance": "Medium-sized dairy cattle with red and white markings",
+        "climate": "Adapted to cool and temperate conditions",
+        "special_features": "Known for good milk production and adaptability",
+    },
+
+    "Brown_Swiss": {
+        "origin": "Switzerland",
+        "type": "Cattle",
+        "purpose": "Milk production",
+        "appearance": "Large cattle with brown to grey-brown coat",
+        "climate": "Adaptable to different climatic conditions",
+        "special_features": "Known for milk production, strength and longevity",
+    },
+
+    "Guernsey": {
+        "origin": "Guernsey, Channel Islands",
+        "type": "Cattle",
+        "purpose": "Milk production",
+        "appearance": "Medium-sized cattle with reddish-brown and white markings",
+        "climate": "Adapted to temperate conditions",
+        "special_features": "Dairy breed known for rich milk",
+    },
+
+    "Holstein_Friesian": {
+        "origin": "Netherlands",
+        "type": "Cattle",
+        "purpose": "Milk production",
+        "appearance": "Large cattle with distinctive black-and-white markings",
+        "climate": "Adaptable with appropriate management",
+        "special_features": "Widely known for high milk production",
+    },
+
+    "Jersey": {
+        "origin": "Jersey, Channel Islands",
+        "type": "Cattle",
+        "purpose": "Milk production",
+        "appearance": "Small to medium-sized cattle with fawn to light-brown coat",
+        "climate": "Adaptable to warm and temperate conditions",
+        "special_features": "Known for milk with relatively high fat content",
+    },
+
+    "Kasargod": {
+        "origin": "Kerala, India",
+        "type": "Cattle",
+        "purpose": "Milk and agricultural use",
+        "appearance": "Small-sized cattle with compact body and varied coat colours",
+        "climate": "Adapted to warm and humid conditions",
+        "special_features": "Hardy cattle adapted to local Kerala conditions",
+    },
+
+    "Ladakhi": {
+        "origin": "Ladakh, India",
+        "type": "Cattle",
+        "purpose": "Milk and agricultural use",
+        "appearance": "Small-sized cattle adapted to high-altitude environments",
+        "climate": "Adapted to cold and high-altitude conditions",
+        "special_features": "Hardy breed adapted to the harsh Ladakh environment",
+    },
+
+    "Red_Dane": {
+        "origin": "Denmark",
+        "type": "Cattle",
+        "purpose": "Milk and beef production",
+        "appearance": "Medium to large cattle with red to reddish-brown coat",
+        "climate": "Adapted to temperate conditions",
+        "special_features": "Dual-purpose breed with good dairy characteristics",
+    },
 })
 
 
@@ -569,11 +649,7 @@ def get_canonical_breed_name(breed_name: str) -> Optional[str]:
     """
     Return the official breed name stored in BREED_DATA.
 
-    Example:
-        red_sindhi -> Red Sindhi
-        RED SINDHI -> Red Sindhi
-        gir -> Gir
-        GIR -> Gir
+    Also handles names used by the trained AI model.
     """
 
     if not breed_name:
@@ -581,9 +657,37 @@ def get_canonical_breed_name(breed_name: str) -> Optional[str]:
 
     requested = _normalize_breed_name(breed_name)
 
+    # --------------------------------------------------------
+    # MODEL NAME ALIASES
+    # --------------------------------------------------------
+
+    aliases = {
+        "khillari": "Khillar",
+        "poda thirupu": "Poda Thurpu",
+        "bhelai": "Belahi",
+        "gangatari": "Gangatiri",
+        "ghumsari": "Ghumusari",
+        "luit": "Luit (Swamp)",
+        "marathwada": "Marathwadi",
+    }
+
+    # --------------------------------------------------------
+    # CHECK ALIAS
+    # --------------------------------------------------------
+
+    if requested in aliases:
+        return aliases[requested]
+
+    # --------------------------------------------------------
+    # NORMAL DATABASE SEARCH
+    # --------------------------------------------------------
+
     for official_name in BREED_DATA.keys():
 
-        if _normalize_breed_name(official_name) == requested:
+        if _normalize_breed_name(
+            official_name
+        ) == requested:
+
             return official_name
 
     return None
